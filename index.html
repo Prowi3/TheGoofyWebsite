@@ -93,6 +93,7 @@
             padding-left: 10px;
         }
 
+        /* Burger menu styles */
         .burger-menu {
             position: absolute;
             top: 20px;
@@ -104,6 +105,7 @@
             border-radius: 5px;
             z-index: 3;
             transition: transform 0.3s;
+            transform-origin: center; /* Set the rotation origin to the center */
         }
 
         .burger-menu::before,
@@ -114,14 +116,30 @@
             height: 4px;
             background-color: #fff;
             border-radius: 5px;
+            transition: transform 0.3s; /* Add the transition property */
         }
 
         .burger-menu::before {
             top: -10px;
+            transform-origin: center;
         }
 
         .burger-menu::after {
             bottom: -10px;
+            transform-origin: center;
+        }
+
+        /* Add a class to rotate the burger menu icon */
+        .burger-menu.open {
+            transform: rotate(45deg);
+        }
+
+        .burger-menu.open::before {
+            transform: rotate(90deg); /* Rotate the top bar */
+        }
+
+        .burger-menu.open::after {
+            transform: rotate(-90deg); /* Rotate the bottom bar */
         }
     </style>
 </head>
@@ -146,8 +164,10 @@
 
     <div class="additional-bg"></div>
 
+    <!-- Burger menu icon -->
     <div class="burger-menu" onclick="toggleSidebar()"></div>
 
+    <!-- Sidebar -->
     <div class="sidebar" id="mySidebar">
         <br>
         <br>
@@ -160,30 +180,19 @@
     <img src="assets/cassia logo.svg" alt="Logo" class="logo">
 
     <script>
-        document.querySelector(".burger-menu").addEventListener("click", toggleSidebar);
-    
         function toggleSidebar() {
             var sidebar = document.getElementById("mySidebar");
+            var burgerMenu = document.querySelector(".burger-menu");
             var sidebarStyle = getComputedStyle(sidebar);
-    
+
             if (sidebarStyle.left === "0px" || sidebarStyle.left === "0") {
                 sidebar.style.left = "-250px";
+                burgerMenu.classList.remove("open"); // Remove the "open" class to close the menu
             } else {
                 sidebar.style.left = "0";
+                burgerMenu.classList.add("open"); // Add the "open" class to open the menu
             }
         }
-    
-        document.body.addEventListener("click", function(event) {
-            var sidebar = document.getElementById("mySidebar");
-            var sidebarStyle = getComputedStyle(sidebar);
-    
-            if (sidebarStyle.left === "0px" || sidebarStyle.left === "0") {
-                var target = event.target;
-                if (!sidebar.contains(target) && target !== document.querySelector(".burger-menu")) {
-                    sidebar.style.left = "-250px"; // Close the sidebar
-                }
-            }
-        });
     </script>
 
 </body>
