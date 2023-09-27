@@ -69,7 +69,7 @@
 
         .logo {
             position: absolute;
-            top: 20px;
+            top: 1px;
             left: 50%;
             transform: translateX(-50%);
             width: 45px;
@@ -161,17 +161,29 @@
 
     <script>
         document.querySelector(".burger-menu").addEventListener("click", toggleSidebar);
-
+    
         function toggleSidebar() {
             var sidebar = document.getElementById("mySidebar");
             var sidebarStyle = getComputedStyle(sidebar);
-
+    
             if (sidebarStyle.left === "0px" || sidebarStyle.left === "0") {
                 sidebar.style.left = "-250px";
             } else {
                 sidebar.style.left = "0";
             }
         }
+    
+        document.body.addEventListener("click", function(event) {
+            var sidebar = document.getElementById("mySidebar");
+            var sidebarStyle = getComputedStyle(sidebar);
+    
+            if (sidebarStyle.left === "0px" || sidebarStyle.left === "0") {
+                var target = event.target;
+                if (!sidebar.contains(target) && target !== document.querySelector(".burger-menu")) {
+                    sidebar.style.left = "-250px"; // Close the sidebar
+                }
+            }
+        });
     </script>
 
 </body>
