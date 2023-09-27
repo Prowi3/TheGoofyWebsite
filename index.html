@@ -93,7 +93,6 @@
             padding-left: 10px;
         }
 
-        /* Burger menu styles */
         .burger-menu {
             position: absolute;
             top: 20px;
@@ -105,7 +104,7 @@
             border-radius: 5px;
             z-index: 3;
             transition: transform 0.3s;
-            transform-origin: center; /* Set the rotation origin to the center */
+            transform-origin: center;
         }
 
         .burger-menu::before,
@@ -116,30 +115,29 @@
             height: 4px;
             background-color: #fff;
             border-radius: 5px;
-            transition: transform 0.3s; /* Add the transition property */
+            transition: transform 0.3s;
         }
 
         .burger-menu::before {
             top: -10px;
-            transform-origin: center;
+            transform-origin: left;
         }
 
         .burger-menu::after {
             bottom: -10px;
-            transform-origin: center;
+            transform-origin: left;
         }
-
-        /* Add a class to rotate the burger menu icon */
+        
         .burger-menu.open {
-            transform: rotate(45deg);
+            transform: rotate(0deg);
         }
 
         .burger-menu.open::before {
-            transform: rotate(90deg); /* Rotate the top bar */
+            transform: rotate(45deg);
         }
 
         .burger-menu.open::after {
-            transform: rotate(-90deg); /* Rotate the bottom bar */
+            transform: rotate(-45deg);
         }
     </style>
 </head>
@@ -150,9 +148,9 @@
         <br>
         <br>
         <br>
-        <h1>cassia</h1>
+        <h1>Cassia Emulator</h1>
         <p>
-        Run PC Games on your Android Device
+        Play PC Games on your Android Device
         </p>
     </section>
 
@@ -164,10 +162,8 @@
 
     <div class="additional-bg"></div>
 
-    <!-- Burger menu icon -->
     <div class="burger-menu" onclick="toggleSidebar()"></div>
 
-    <!-- Sidebar -->
     <div class="sidebar" id="mySidebar">
         <br>
         <br>
