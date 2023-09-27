@@ -11,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 
     <style>
-
-        body{
+        body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
             color: #fff;
@@ -23,56 +22,54 @@
             font-size: 40px;
         }
 
-        section{
-            position: relative;
+        section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 400px;
-            padding: 100px;
+            min-height: 100vh;
             text-align: center;
+            position: relative;
         }
 
-        .spacer1 {
+        .spacer1, .spacer2 {
             position: absolute;
-            height: 300px;
+            top: 0;
+            left: 0;
             width: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            height: 100%;
             z-index: -1;
         }
 
+        .spacer1 {
+            background-image: url('assets/BG.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
         .spacer2 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 300px;
+            background-image: url('assets/BGB.svg');
             background-repeat: no-repeat;
             background-position: bottom;
             background-size: cover;
         }
 
-        .layer1 {
-            background-image: url('assets/BG.svg');
-        }
-
-        .layer2 {
-            background-image: url('assets/BGB.svg');
-        }
-
-        .footer {
+        .layer1, .layer2 {
             position: absolute;
+            top: 0;
             left: 0;
-            right: 0;
-            color: white;
-            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1, p {
+            position: relative;
+            z-index: 1;
         }
 
         .logo {
             position: absolute;
-            top: 0;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             width: 45px;
@@ -131,6 +128,7 @@
 <body>
 
     <section>
+        <div class="spacer1 layer1"></div>
         <br>
         <br>
         <br>
@@ -138,18 +136,16 @@
         <p>
         Run PC Games on your Android Device
         </p>
-        <div class="spacer1 layer1"></div>
     </section>
 
     <section>
+        <div class="spacer2 layer2"></div>
         <h1>What is Cassia?</h1>
         <p>Cassia is an Android app that will allow you to play Windows games on your Android devices.</p>
-        <div class="spacer2 layer2"></div>
     </section>
 
     <div class="additional-bg"></div>
-    
-    <div class="footer"><strong>© 2024 Cassia Team and Contributors</strong></div>
+
     <div class="burger-menu" onclick="toggleSidebar()"></div>
 
     <div class="sidebar" id="mySidebar">
@@ -164,12 +160,12 @@
     <img src="assets/cassia logo.svg" alt="Logo" class="logo">
 
     <script>
-        document.getElementById("burger-menu").addEventListener("click", toggleSidebar);
-    
+        document.querySelector(".burger-menu").addEventListener("click", toggleSidebar);
+
         function toggleSidebar() {
             var sidebar = document.getElementById("mySidebar");
             var sidebarStyle = getComputedStyle(sidebar);
-    
+
             if (sidebarStyle.left === "0px" || sidebarStyle.left === "0") {
                 sidebar.style.left = "-250px";
             } else {
@@ -177,6 +173,6 @@
             }
         }
     </script>
-    
+
 </body>
 </html>
