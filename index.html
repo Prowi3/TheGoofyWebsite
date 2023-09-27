@@ -82,7 +82,7 @@
             top: 0;
             left: -250px;
             height: 100%;
-            background-color: rgb(78, 78, 78);
+            background-color: #111;
             overflow-x: hidden;
             transition: 0.3s;
             z-index: 1;
@@ -106,6 +106,7 @@
             transition: transform 0.3s;
             transform-origin: center;
         }
+        
 
         .burger-menu::before,
         .burger-menu::after {
@@ -116,11 +117,12 @@
             background-color: #fff;
             border-radius: 5px;
             transition: transform 0.3s;
+            transition: opacity 0.3s;
         }
 
         .burger-menu::before {
             top: -10px;
-            transform-origin: left;
+            transform-origin: center;
         }
 
         .burger-menu::after {
@@ -134,10 +136,14 @@
 
         .burger-menu.open::before {
             transform: rotate(0deg);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .burger-menu.open::after {
             transform: rotate(0deg);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
     </style>
 </head>
@@ -183,10 +189,10 @@
 
             if (sidebarStyle.left === "0px" || sidebarStyle.left === "0") {
                 sidebar.style.left = "-250px";
-                burgerMenu.classList.remove("open"); // Remove the "open" class to close the menu
+                burgerMenu.classList.remove("open");
             } else {
                 sidebar.style.left = "0";
-                burgerMenu.classList.add("open"); // Add the "open" class to open the menu
+                burgerMenu.classList.add("open");
             }
         }
     </script>
