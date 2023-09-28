@@ -234,14 +234,18 @@
     <script>
         function scrollToTop() {
             const initialY = window.scrollY;
-            const scrollDuration = 500; // Adjust this value to control the scroll speed (in milliseconds)
+            const scrollDuration = 500;
+            const easing = function (t) {
+                return 1 - Math.pow(1 - t, 2);
+            };
             let startTime = null;
     
             function scrollStep(timestamp) {
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
                 const percentage = Math.min(progress / scrollDuration, 1);
-                window.scrollTo(0, initialY * (1 - percentage));
+                const easedPercentage = easing(percentage);
+                window.scrollTo(0, initialY * (1 - easedPercentage));
     
                 if (progress < scrollDuration) {
                     requestAnimationFrame(scrollStep);
@@ -265,6 +269,12 @@
                 burgerMenu.classList.add("open");
             }
         }
+        var sidebarLinks = document.querySelectorAll(".sidebar h2");
+        sidebarLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                toggleSidebar();
+            });
+        });
     
         document.addEventListener("click", function(event) {
             if (getComputedStyle(sidebar).left === "0px" && event.target !== burgerMenu && !sidebar.contains(event.target)) {
@@ -278,5 +288,6 @@
             }
         });
     </script>
+    
   </body>
 </html>
