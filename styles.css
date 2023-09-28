@@ -64,6 +64,16 @@ body {
     color: #fff;
 }
 
+.About h2{
+    margin: 20px;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffc7b7;
+    mix-blend-mode: lighten;
+}
+
 .Contact {
     position: relative;
     flex-direction: column;
