@@ -234,10 +234,9 @@
     <script>
         function scrollToTop() {
             const initialY = window.scrollY;
-            const scrollDuration = 500;
+            const scrollDuration = 200;
             let startTime = null;
     
-            // Modified easing function for starting fast and slowing down
             function scrollStep(timestamp) {
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
