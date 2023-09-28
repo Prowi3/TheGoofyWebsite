@@ -219,11 +219,12 @@
     <img src="assets/cassia logo.svg" alt="Logo" class="logo">
 
     <script>
+        var sidebar = document.getElementById("mySidebar");
+        var burgerMenu = document.querySelector(".burger-menu");
+    
         function toggleSidebar() {
-            var sidebar = document.getElementById("mySidebar");
-            var burgerMenu = document.querySelector(".burger-menu");
             var sidebarStyle = getComputedStyle(sidebar);
-
+    
             if (sidebarStyle.left === "0px" || sidebarStyle.left === "0") {
                 sidebar.style.left = "-250px";
                 burgerMenu.classList.remove("open");
@@ -232,6 +233,20 @@
                 burgerMenu.classList.add("open");
             }
         }
-    </script>
+    
+        document.addEventListener("click", function(event) {
+            if (getComputedStyle(sidebar).left === "0px" && event.target !== burgerMenu && !sidebar.contains(event.target)) {
+                toggleSidebar();
+            }
+        });
+    
+        document.addEventListener("scroll", function() {
+            // Close the sidebar when scrolling occurs
+            if (getComputedStyle(sidebar).left === "0px") {
+                toggleSidebar();
+            }
+        });
+    </script>  
+    
   </body>
 </html>
