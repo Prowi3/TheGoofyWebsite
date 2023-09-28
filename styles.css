@@ -14,13 +14,14 @@ body {
 }
 
 .cassia-logo {
+    overflow-x: hidden;
     position: absolute;
-    top: 0;
+    top: -510px;
     left: 50%;
     transform: translateX(-50%) scale(0.05);
     z-index: 10;
+    cursor: pointer;
 }
-
 
 .Home {
     position: relative;
