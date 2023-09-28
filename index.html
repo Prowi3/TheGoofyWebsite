@@ -68,12 +68,24 @@
             background-size: cover;
         }
 
-        .layer1, .layer2 {
+        .layer1 {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        .layer2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        section#about {
+            height: 8000px;
         }
 
         h1, p {
@@ -197,10 +209,58 @@
         <button class="rounded-button" style="outline: none;">Coming Soon</button>
     </section>
                  <!-- Section 2 -->
-    <section>
+    <section id="about">
         <div class="spacer2 layer2"></div>
         <h1>What is Cassia?</h1>
         <p>Cassia is an Android app that will allow you to play Windows games on your Android devices.</p>
+        
+        <h1>Who's working on Cassia?</h1>
+        <p>The only two developers are me (@◱ Mark 🌈) and @ByLaws, with various parts of the work being split between us.</p>
+        
+        <h1>When will Cassia be released?</h1>
+        <p>We're currently planning to release the first version sometime in 2024 but due to the nature of software development, it might get delayed. Rest assured, we're trying our best to deliver a good product :)</p>
+        
+        <h1>Will Cassia be open-source?</h1>
+        <p>No, we came to this decision after considering the state of forks in Skyline. It should be noted that only the app part of Cassia will be closed source, any changes we make to open-source projects we use such as Wine, FEX, DXVK, etc will be open-source as well regardless of the license and we'll strive to upstream any changes we can as we want to further the state of Windows on ARM64 Linux. Additionally, we're committed to fully open-source everything if for any reason we decide to stop working on the project so that someone else can continue our work.</p>
+        
+        <h1>Will Cassia be fully paid?</h1>
+        <p>No, doing monetization right is important to us as we need to financially support the work we put into the project while ensuring that those who cannot pay get a great experience as well. At the moment we have no finalized plans of monetization but we plan to have a one-time payment for strictly non-essential changes (such as filters or themes) and a recurring payment where you get all of those perks plus early-access in a similar capacity to Skyline Edge. We're trying to strike the right balance here while being committed to our principles such as no ads or monetization of core features such as higher performance.</p>
+        
+        <h1>How does Cassia work?</h1>
+        <p>Cassia is composed of several components from a variety of open-source projects, in a similar manner to Proton (which is used to run Windows games on the Steam Deck) with our own glue deeply integrating it all together, allowing for the highest performance possible with a great user experience on Android on our frontend. As a basic overview of what we use:</p>
+        <p>On the CPU-side, we use Wine for Windows API translation combined with FEXCore for translating x86 (32-bit) or x86-64 (64-bit) instructions to ARM64 on the fly.</p>
+        <p>On the GPU-side, we use DXVK/VKD3D which translates DX calls into VK which we'll pass onto the host Vulkan driver.</p>
+        <p>It should be noted that a huge amount of our effort goes into improving these open-source projects for better support of Windows gaming on ARM64 Linux, as well as dealing with mobile GPUs better as they're geared towards desktop GPUs at the moment.</p>
+
+        <h1>Will I need Termux, Input Bridge or other apps to use Cassia properly?</h1>
+        <p>No, Cassia is an all-in-one app that's entirely self-contained. A core goal of ours is to make the app easy to use, and we're going to try our best to get as close to a plug-and-play experience as possible.</p>
+        
+        <h1>Can I bring my own Wine to use with Cassia?</h1>
+        <p>Yes, we plan to support this given the Wine you're using is based off our open-source Wine fork as we'll have certain changes to interact with the frontend correctly. This should allow for full customization of Wine and other components while using our frontend.</p>
+        
+        <h1>What GPUs will Cassia support?</h1>
+        <p>For the best experience, you should stick to Qualcomm GPUs with AMD coming in second place. We aim to provide support for Mali GPUs which will probably come with a few caveats. Modern Adreno/AMD GPUs are designed to be able to run PC games to some extent while Mali GPUs have certain hardware and driver limitations that are tricky to work around.</p>
+        
+        <h1>Will custom drivers be supported on Adreno devices?</h1>
+        <p>Skyline paved the path for custom drivers in the first place with the hard work of @ByLaws on adrenotools, which we will have full support for all features of in Cassia.</p>
+        
+        <h1>Will Cassia also support Linux games?</h1>
+        <p>No. Certain restrictions in the version of the Linux kernel used for Android make running Linux software impractical.</p>
+        
+        <h1>Will Cassia support run Windows as a whole or just Windows applications?</h1>
+        <p>Just Windows applications, for a variety of reasons it's not possible to performantly run a whole Windows install nor is it desirable due to the size of it and the significantly higher overhead compared to our approach.</p>
+        
+        <h1>Which input methods will Cassia support?</h1>
+        <p>Cassia will support both controllers and on-screen touch controls.</p>
+        
+        <h1>Will Cassia support this [mod/program]?</h1>
+        <p>Cassia will have a similar amount of compatibility to Wine, as a general rule, if something works on regular Wine then it'll work on Cassia with a couple of exceptions.</p>
+        
+        <h1>Will Cassia support game launchers such as Steam?</h1>
+        <p>We want to support as many game launchers as possible but we have to work around certain issues to do so performantly such as the usage of CEF in Steam which won't perform as well under FEX. Nonetheless, Steam will be a #1 priority and we'll work on other launchers as we see fit.</p>
+        
+        <h1>Will Cassia run [insert random game]?</h1>
+        <p>We generally don't know for sure unless we've tried, the first check should be to see if it works correctly on Proton (via ProtonDB or similar sites). If it does then adjust for how intensive it'll be on mobile HW, modern PC GPUs can use hundreds of watts of power while a mobile GPU only has a maximum of 5-10W.</p>
     </section>
 
     <div class="additional-bg"></div>
