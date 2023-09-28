@@ -13,6 +13,15 @@ body {
     background: #111 url('assets/BG.svg') no-repeat center top / cover;
 }
 
+.cassia-logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.05);
+    z-index: 10;
+}
+
+
 .Home {
     position: relative;
     flex-direction: column;
@@ -64,8 +73,9 @@ body {
     color: #fff;
 }
 
-.stamp h6{
+.footer-team h6{
     max-width: 100%;
     text-align: center;
     color: #fff;
+    margin: 10px;
 }
