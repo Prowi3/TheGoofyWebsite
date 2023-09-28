@@ -18,6 +18,10 @@
             outline: none !important;
         }
 
+        html {
+    scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -219,7 +223,7 @@
     <div class="sidebar" id="mySidebar">
         <br>
         <br>
-        <a href="#"><h2>Home</h2></a>
+        <a href="#" onclick="scrollToTop()"><h2>Home</h2></a>
         <a href="#about"><h2>About</h2></a>
         <a href="#team"><h2>Team</h2></a>
         <a href="#download"><h2>Download</h2></a>
@@ -228,6 +232,15 @@
     <img src="assets/cassia logo.svg" alt="Logo" class="logo">
 
     <script>
+        function scrollToTop() {
+            const element = document.body;
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+            });
+        }
+    
         var sidebar = document.getElementById("mySidebar");
         var burgerMenu = document.querySelector(".burger-menu");
     
@@ -254,7 +267,9 @@
                 toggleSidebar();
             }
         });
-    </script>  
+    </script>
+    
+    
     
   </body>
 </html>
