@@ -233,12 +233,22 @@
 
     <script>
         function scrollToTop() {
-            const element = document.body;
-            element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest"
-            });
+            const initialY = window.scrollY;
+            const scrollDuration = 500; // Adjust this value to control the scroll speed (in milliseconds)
+            let startTime = null;
+    
+            function scrollStep(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                const percentage = Math.min(progress / scrollDuration, 1);
+                window.scrollTo(0, initialY * (1 - percentage));
+    
+                if (progress < scrollDuration) {
+                    requestAnimationFrame(scrollStep);
+                }
+            }
+    
+            requestAnimationFrame(scrollStep);
         }
     
         var sidebar = document.getElementById("mySidebar");
@@ -268,8 +278,5 @@
             }
         });
     </script>
-    
-    
-    
   </body>
 </html>
