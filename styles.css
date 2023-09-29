@@ -10,7 +10,7 @@ body, * {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #111 url('assets/BG.svg') no-repeat center top / cover;
+    background: #111 url('assets/BG.ssvg') no-repeat center top / cover;
 }
 
 .cassia-logo {
@@ -75,7 +75,7 @@ body {
 }
 
 .About p {
-    color: #ffe1d9;
+    color: #fff;
 }
 
 .Contact {
@@ -86,6 +86,15 @@ body {
     padding: 100px 20vw;
     text-align: center;
     color: #fff;
+}
+
+.Contact img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.05);
+    z-index: 10;
+    cursor: pointer;
 }
 
 .footer-team h6{
