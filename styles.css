@@ -82,8 +82,8 @@ body {
     position: relative;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
-    padding: 100px 20vw;
+    min-height: 150px;
+    padding: 20px 20vw;
     text-align: center;
     color: #fff;
 }
