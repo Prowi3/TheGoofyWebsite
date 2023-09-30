@@ -1,6 +1,35 @@
+const bar1 = document.getElementById("bar1");
+const bar2 = document.getElementById("bar2");
+const bar3 = document.getElementById("bar3");
+const sideMenu = document.getElementById('sideMenu');
+
+function toggleX() {
+    bar1.style.transform = "rotate(38deg)";
+    bar2.style.opacity = "0";
+    bar2.style.opacity = "0";
+    bar3.style.transform = "rotate(-38deg)";
+    sideMenu.classList.add('active');
+}
+
+function resetBurger() {
+    bar1.style.transform = "rotate(0deg)";
+    bar2.style.opacity = "1";
+    bar3.style.transform = "rotate(0deg)";
+    sideMenu.classList.remove('active');
+}
+
+const burgerMenu = document.querySelector('.burger-menu');
+burgerMenu.addEventListener('click', function () {
+    if (bar1.style.transform === "rotate(0deg)") {
+        toggleX();
+    } else {
+        resetBurger();
+    }
+});
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry)
+        console.log(entry);
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } else {
@@ -12,34 +41,21 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.Contact, .About');
 hiddenElements.forEach((el) => observer.observe(el));
 
-
-const burgerMenu = document.querySelector('.burger-menu');
-const sideMenu = document.getElementById('sideMenu');
-
-function toggleSideMenu() {
-    sideMenu.classList.toggle('active');
-}
-
-burgerMenu.addEventListener('click', function (event) {
-    event.stopPropagation();
-    toggleSideMenu();
-});
-
 const menuLinks = document.querySelectorAll('.side-menu a');
 menuLinks.forEach(function (item) {
     item.addEventListener('click', function () {
-        toggleSideMenu();
+        resetBurger();
     });
 });
 
 document.addEventListener('click', function (event) {
     if (!sideMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
-        sideMenu.classList.remove('active');
+        resetBurger();
     }
 });
 
 window.addEventListener('scroll', function () {
     if (sideMenu.classList.contains('active')) {
-        sideMenu.classList.remove('active');
+        resetBurger()
     }
 });

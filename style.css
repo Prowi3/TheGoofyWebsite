@@ -140,6 +140,10 @@ body {
     border-radius: 9999px;
 }
 
+#bar1, #bar3 {
+    transform-origin: left center;
+}
+
 .side-menu {
     position: absolute;
     top: -2px;
