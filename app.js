@@ -69,3 +69,14 @@ aboutLink.addEventListener('click', function (event) {
         aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
     }
 });
+
+const communityLink = document.querySelector('.side-menu a[href="#community"]');
+
+communityLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
+    }
+});
