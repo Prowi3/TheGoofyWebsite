@@ -92,6 +92,12 @@ body {
     color: #fff;
 }
 
+.About a {
+    color: #FF8065    ;
+    text-decoration: none;
+}
+
+
 .Contact {
     position: relative;
     flex-direction: column;
