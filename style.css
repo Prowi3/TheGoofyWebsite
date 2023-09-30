@@ -147,8 +147,8 @@ body {
     position: fixed;
     top: 0;
     left: -250px;
-    width: 250px;
-    height: 100%;
+    width: 200px;
+    height: 400%;
     background-color: #333;
     overflow-x: hidden;
     transition: 0.5s;
@@ -171,14 +171,13 @@ body {
     font-size: 18px;
     display: block;
     transition: 0.3s;
-    padding: 30px 0px;
+    font-size: 30px;
 }
 
 .side-menu a:hover {
     color: #FF9579;
 }
 
-/* Show/hide the side menu when the burger menu is clicked */
 .side-menu.active {
     left: 0;
 }
