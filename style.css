@@ -13,15 +13,6 @@ body {
     background: #111 url('assets/BG.ssvg') no-repeat center top / cover;
 }
 
-.About {
-    opacity: 0;
-    transition: all 1s;
-}
-
-.show {
-    opacity: 1;
-}
-
 .cassia-logo {
     overflow-x: hidden;
     position: absolute;
@@ -97,7 +88,6 @@ body {
     text-decoration: solid;
 }
 
-
 .Contact {
     position: relative;
     flex-direction: column;
@@ -106,6 +96,8 @@ body {
     padding: 20px 20vw;
     text-align: center;
     color: #fff;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 .Contact img {
@@ -122,4 +114,8 @@ body {
     text-align: center;
     color: #fff;
     margin: 10px;
+}
+
+.show {
+    opacity: 1;
 }

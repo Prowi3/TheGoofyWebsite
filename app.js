@@ -3,12 +3,10 @@ const observer = new IntersectionObserver((entries) => {
         console.log(entry)
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
         }
     });
 });
 
 
-const AboutElements = document.querySelectorAll('.About');
-AboutElements.forEach((el) => observer.observe(el));
+const hiddenElements = document.querySelectorAll('.Contact');
+hiddenElements.forEach((el) => observer.observe(el));
