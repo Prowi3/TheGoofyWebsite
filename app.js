@@ -29,7 +29,6 @@ burgerMenu.addEventListener('click', function () {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } else {
@@ -57,5 +56,16 @@ document.addEventListener('click', function (event) {
 window.addEventListener('scroll', function () {
     if (sideMenu.classList.contains('active')) {
         resetBurger()
+    }
+});
+
+const aboutLink = document.querySelector('.side-menu a[href="#about"]');
+
+aboutLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
     }
 });
