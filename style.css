@@ -150,15 +150,14 @@ body {
 
 .side-menu {
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: -250px;
     width: 200px;
     height: 400%;
-    background-color: #111;
+    background-color: #222;
     overflow-x: hidden;
     transition: 0.5s;
     z-index: 2;
-    border: 1px solid #fff;
 }
 
 .side-menu ul {
