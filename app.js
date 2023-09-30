@@ -9,6 +9,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-
 const hiddenElements = document.querySelectorAll('.Contact, .About');
 hiddenElements.forEach((el) => observer.observe(el));
+
