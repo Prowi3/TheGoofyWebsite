@@ -31,7 +31,7 @@ body {
     position: relative;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
+    min-height: 800px;
     padding: 200px 20vw;
     text-align: center;
     color: #fff;
@@ -69,7 +69,7 @@ body {
     text-align: center;
     color: #fff;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 2s;
 }
 
 .About h1{
