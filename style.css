@@ -70,7 +70,8 @@ body {
     color: #fff;
     opacity: 0;
     filter: blur(5px);
-    transition: opacity 1s, filter 1s;
+    transform: translateY(40px);
+    transition: opacity 1s, filter 1s, transform 1s;
 }
 
 .About h1{
