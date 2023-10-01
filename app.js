@@ -29,16 +29,17 @@ burgerMenu.addEventListener('click', function () {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
         }
     });
+}, {
+    threshold: 0.5
 });
 
 const hiddenElements = document.querySelectorAll('.Contact, .About');
 hiddenElements.forEach((el) => observer.observe(el));
+
 
 const menuLinks = document.querySelectorAll('.side-menu a');
 menuLinks.forEach(function (item) {
