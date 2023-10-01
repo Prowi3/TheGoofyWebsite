@@ -31,7 +31,6 @@ body {
     position: relative;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
     padding: 200px 20vw;
     text-align: center;
     color: #fff;
@@ -44,14 +43,18 @@ body {
 
 .Home button {
     font-size: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 9999px;
     width: 70px;
-    height: 20px;
+    height: 25px;
     border: none;
     background-color: #fff;
-    transition: background-color 0.1s, transform 0.1s, color 0.1s;
+    transition: background-color 0.3s, transform 0.3s, color 0.1s;
     cursor: pointer;
+}
+
+.Home button:hover {
+    transform: scale(1.1);
 }
 
 .Home button:active {
@@ -65,7 +68,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 400px;
-    padding: 100px 20vw;
+    padding: 10px 10vw;
     text-align: center;
     color: #fff;
     opacity: 0;
