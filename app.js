@@ -109,13 +109,15 @@ homeLink.addEventListener('click', function (event) {
     event.preventDefault();
 
     if (homeSection && h1ElementHome) {
-        h1ElementHome.style.transition = 'color 1s ease';
+        h1ElementHome.style.transition = 'color 1s ease, font-size 1s ease';
         h1ElementHome.style.color = '#FF8065';
+        h1ElementHome.style.fontSize = '30px'; // You can adjust the font size here
 
         homeSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
 
         setTimeout(function () {
             h1ElementHome.style.color = 'white';
+            h1ElementHome.style.fontSize = '24px'; // Return to the normal font size here
         }, 800);
     }
 });
