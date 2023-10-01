@@ -62,15 +62,28 @@ window.addEventListener('scroll', function () {
 });
 
 const aboutLink = document.querySelector('.side-menu a[href="#about"]');
+const aboutSection = document.getElementById('about');
+const h1Element = aboutSection.querySelector('h1');
 
 aboutLink.addEventListener('click', function (event) {
     event.preventDefault();
-    
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
+
+    // Check if the about section and h1 element exist
+    if (aboutSection && h1Element) {
+        // Trigger the color change by changing the h1 element's color to red
+        h1Element.style.color = '#FF8065';
+
+        // Scroll to the about section smoothly
         aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
+
+        // After a delay (800 milliseconds in this case, matching the scroll duration), change the h1 color back to white
+        setTimeout(function () {
+            h1Element.style.color = 'white';
+        }, 800);
     }
 });
+
+
 
 const communityLink = document.querySelector('.side-menu a[href="#community"]');
 
