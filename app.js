@@ -68,15 +68,10 @@ const h1Element = aboutSection.querySelector('h1');
 aboutLink.addEventListener('click', function (event) {
     event.preventDefault();
 
-    // Check if the about section and h1 element exist
     if (aboutSection && h1Element) {
-        // Trigger the color change by changing the h1 element's color to red
+        h1Element.style.transition = 'color 1s ease'
         h1Element.style.color = '#FF8065';
-
-        // Scroll to the about section smoothly
         aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
-
-        // After a delay (800 milliseconds in this case, matching the scroll duration), change the h1 color back to white
         setTimeout(function () {
             h1Element.style.color = 'white';
         }, 800);
@@ -85,13 +80,25 @@ aboutLink.addEventListener('click', function (event) {
 
 
 
+
+
 const communityLink = document.querySelector('.side-menu a[href="#community"]');
+const contactSection = document.getElementById('contact');
+const h1ElementContact = contactSection.querySelector('h1');
 
 communityLink.addEventListener('click', function (event) {
     event.preventDefault();
-    
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
+
+    if (contactSection && h1ElementContact) {
+        h1ElementContact.style.transition = 'color 1s ease';
+        h1ElementContact.style.color = '#FF8065';
+
         contactSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
+
+        setTimeout(function () {
+            h1ElementContact.style.color = 'white';
+        }, 800);
     }
 });
+
+
