@@ -2,6 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body, * {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
     -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
@@ -12,24 +13,23 @@ body, * {
     overflow-x: hidden;
 }
 
+
 body {
     font-family: 'Roboto', sans-serif;
     background: #111 url('assets/BG.ssvg') no-repeat center top / cover;
 }
+
 
 .cassia-logo {
     overflow-x: hidden;
     position: fixed;
     top: -510px;
     left: 50%;
-    transform: translateX(-50%) scale(0.05);
+    transform: translateX(-50%) scale(0.045);
     z-index: 1;
     cursor: pointer;
     mix-blend-mode: difference;
 }
-
-
-
 
 
 .cassia-wave {
@@ -40,10 +40,10 @@ body {
     background-size: cover;
 }
 
+
 .wave {
     background-image: url("assets/BG.svg");
 }
-
 
 
 .Home {
@@ -57,9 +57,11 @@ body {
     transform: scale(1.5);
 }
 
+
 .Home p {
     font-size: 10px;
 }
+
 
 .Home button {
     font-size: 10px;
@@ -73,15 +75,18 @@ body {
     cursor: pointer;
 }
 
+
 .Home button:hover {
     transform: scale(1.1);
 }
+
 
 .Home button:active {
     background-color: #FF9579;
     transform: scale(0.9);
     color: #fff;
 }
+
 
 .About {
     position: relative;
@@ -97,10 +102,12 @@ body {
     transition: opacity 1s, filter 1s, transform 1s;
 }
 
+
 .About h1{
     color: #fff;
     font-size: 30px;
 }
+
 
 .About h2{
     margin: 10px;
@@ -112,9 +119,11 @@ body {
     font-size: 16px;
 }
 
+
 .About p {
     color: #fff;
 }
+
 
 .About a {
     color: #FF8065;
@@ -135,6 +144,7 @@ body {
     transition: opacity 1s, transform 1s;
 }
 
+
 .Contact img {
     position: absolute;
     top: 50%;
@@ -144,6 +154,7 @@ body {
     cursor: pointer;
 }
 
+
 .footer-team h6{
     max-width: 100%;
     text-align: center;
@@ -151,11 +162,13 @@ body {
     margin: 10px;
 }
 
+
 .show {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
 }
+
 
 .burger-menu {
     cursor: pointer;
@@ -164,6 +177,7 @@ body {
     z-index: 3;
     mix-blend-mode: difference;
 }
+
 
 .bar {
     width: 30px;
@@ -174,9 +188,11 @@ body {
     border-radius: 9999px;
 }
 
+
 #bar1, #bar3 {
     transform-origin: left center;
 }
+
 
 .side-menu {
     position: fixed;
@@ -190,15 +206,18 @@ body {
     z-index: 2;
 }
 
+
 .side-menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
+
 .side-menu li {
     padding: 10px;
 }
+
 
 .side-menu a {
     text-decoration: none;
@@ -209,9 +228,11 @@ body {
     font-size: 30px;
 }
 
+
 .side-menu a:hover {
     color: #FF9579;
 }
+
 
 .side-menu.active {
     left: 0;
