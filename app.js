@@ -6,7 +6,7 @@ const sideMenu = document.getElementById('sideMenu');
 function toggleX() {
     bar1.style.transform = "rotate(38deg)";
     bar2.style.opacity = "0";
-    bar2.style.opacity = "0";
+    bar2.style.transform = "translate(-20px)";
     bar3.style.transform = "rotate(-38deg)";
     sideMenu.classList.add('active');
 }
@@ -14,6 +14,7 @@ function toggleX() {
 function resetBurger() {
     bar1.style.transform = "rotate(0deg)";
     bar2.style.opacity = "1";
+    bar2.style.transform = "translate(0)";
     bar3.style.transform = "rotate(0deg)";
     sideMenu.classList.remove('active');
 }
