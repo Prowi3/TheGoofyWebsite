@@ -2,6 +2,8 @@ const bar1 = document.getElementById("bar1");
 const bar2 = document.getElementById("bar2");
 const bar3 = document.getElementById("bar3");
 const sideMenu = document.getElementById('sideMenu');
+const burgerMenu = document.querySelector('.burger-menu');
+
 
 function toggleX() {
     bar1.style.transform = "rotate(38deg)";
@@ -11,6 +13,7 @@ function toggleX() {
     sideMenu.classList.add('active');
 }
 
+
 function resetBurger() {
     bar1.style.transform = "rotate(0deg)";
     bar2.style.opacity = "1";
@@ -19,7 +22,7 @@ function resetBurger() {
     sideMenu.classList.remove('active');
 }
 
-const burgerMenu = document.querySelector('.burger-menu');
+
 burgerMenu.addEventListener('click', function () {
     if (bar1.style.transform === "rotate(0deg)") {
         toggleX();
@@ -27,6 +30,7 @@ burgerMenu.addEventListener('click', function () {
         resetBurger();
     }
 });
+
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -38,16 +42,16 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.5
 });
 
+
 const hiddenElements = document.querySelectorAll('.Contact, .About');
 hiddenElements.forEach((el) => observer.observe(el));
 
 
 const menuLinks = document.querySelectorAll('.side-menu a');
 menuLinks.forEach(function (item) {
-    item.addEventListener('click', function () {
-        resetBurger();
-    });
+    item.addEventListener('click', resetBurger);
 });
+
 
 document.addEventListener('click', function (event) {
     if (!sideMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
@@ -55,11 +59,13 @@ document.addEventListener('click', function (event) {
     }
 });
 
+
 window.addEventListener('scroll', function () {
     if (sideMenu.classList.contains('active')) {
         resetBurger()
     }
 });
+
 
 const aboutLink = document.querySelector('.side-menu a[href="#about"]');
 const aboutSection = document.getElementById('about');
@@ -77,9 +83,6 @@ aboutLink.addEventListener('click', function (event) {
         }, 800);
     }
 });
-
-
-
 
 
 const communityLink = document.querySelector('.side-menu a[href="#community"]');
@@ -101,17 +104,19 @@ communityLink.addEventListener('click', function (event) {
     }
 });
 
+
 const homeLink = document.querySelector('.side-menu a[href="#home"]');
+const cassiaLogo = document.querySelector('.cassia-logo');
 const homeSection = document.getElementById('home');
 const h1ElementHome = homeSection.querySelector('h1');
 
-homeLink.addEventListener('click', function (event) {
+function handleHomeLinkClick(event) {
     event.preventDefault();
 
     if (homeSection && h1ElementHome) {
         h1ElementHome.style.transition = 'color 1s ease, font-size 1s ease';
         h1ElementHome.style.color = '#FF8065';
-        h1ElementHome.style.fontSize = '30px';
+        h1ElementHome.style.fontSize = '25px';
 
         homeSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
 
@@ -120,6 +125,7 @@ homeLink.addEventListener('click', function (event) {
             h1ElementHome.style.fontSize = '24px';
         }, 800);
     }
-});
+}
 
-
+homeLink.addEventListener('click', handleHomeLinkClick);
+cassiaLogo.addEventListener('click', handleHomeLinkClick);
