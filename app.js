@@ -101,4 +101,23 @@ communityLink.addEventListener('click', function (event) {
     }
 });
 
+const homeLink = document.querySelector('.side-menu a[href="#home"]');
+const homeSection = document.getElementById('home');
+const h1ElementHome = homeSection.querySelector('h1');
+
+homeLink.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (homeSection && h1ElementHome) {
+        h1ElementHome.style.transition = 'color 1s ease';
+        h1ElementHome.style.color = '#FF8065';
+
+        homeSection.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 800 });
+
+        setTimeout(function () {
+            h1ElementHome.style.color = 'white';
+        }, 800);
+    }
+});
+
 

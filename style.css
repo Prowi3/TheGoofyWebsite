@@ -19,13 +19,18 @@ body {
 
 .cassia-logo {
     overflow-x: hidden;
-    position: absolute;
+    position: fixed;
     top: -510px;
     left: 50%;
     transform: translateX(-50%) scale(0.05);
     z-index: 1;
     cursor: pointer;
+    mix-blend-mode: difference;
 }
+
+
+
+
 
 .cassia-wave {
     aspect-ratio: 960/300;
@@ -155,8 +160,9 @@ body {
 .burger-menu {
     cursor: pointer;
     padding: 10px;
-    position: absolute;
+    position: fixed;
     z-index: 3;
+    mix-blend-mode: difference;
 }
 
 .bar {
@@ -173,12 +179,12 @@ body {
 }
 
 .side-menu {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: -250px;
     width: 200px;
     height: 400%;
-    background-color: #222;
+    background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     z-index: 2;
