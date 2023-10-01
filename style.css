@@ -27,6 +27,20 @@ body {
     cursor: pointer;
 }
 
+.cassia-wave {
+    overflow: hidden;
+    position: absolute;
+    top: 115px;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    z-index: -1;
+}
+
 .Home {
     position: relative;
     flex-direction: column;
@@ -67,8 +81,8 @@ body {
     position: relative;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
-    padding: 200px 20vw;
+    min-height: 100px;
+    padding: 50px 10vw;
     text-align: center;
     color: #fff;
     opacity: 0;
