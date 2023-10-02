@@ -129,3 +129,19 @@ function handleHomeLinkClick(event) {
 
 homeLink.addEventListener('click', handleHomeLinkClick);
 cassiaLogo.addEventListener('click', handleHomeLinkClick);
+
+
+const downloadLink = document.getElementById('download-link');
+const downloadButton = document.getElementById('download-button');
+
+function addDesaturationClass() {
+    document.body.classList.add('desaturate');
+}
+
+downloadLink.addEventListener('click', addDesaturationClass);
+
+downloadButton.addEventListener('click', addDesaturationClass);
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.remove('desaturate');
+});
